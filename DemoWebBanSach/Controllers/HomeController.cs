@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoWebBanSach.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,11 @@ namespace DemoWebBanSach.Controllers
 {
     public class HomeController : Controller
     {
+
+        BANSACHEntities db = new BANSACHEntities();
         public ActionResult Index()
         {
+            List<SACH> DSSACH = db.SACHes.ToList();
             return View();
         }
 

@@ -76,17 +76,6 @@
     <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SACHes" Relationship="Self.FK_Sach_NhaXuatBan" FromRole="NHAXUATBAN" ToRole="SACH" />
   </EntityType>
-  <EntityType Name="QUANGCAO">
-    <Key>
-      <PropertyRef Name="STT" />
-    </Key>
-    <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TenCty" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Hinhminhhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Href" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="Ngaybatdau" Type="DateTime" Precision="0" />
-    <Property Name="Ngayhethan" Type="DateTime" Precision="0" />
-  </EntityType>
   <EntityType Name="SACH">
     <Key>
       <PropertyRef Name="Masach" />
@@ -252,7 +241,6 @@
     <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
     <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
     <EntitySet Name="NHAXUATBANs" EntityType="Self.NHAXUATBAN" />
-    <EntitySet Name="QUANGCAOs" EntityType="Self.QUANGCAO" />
     <EntitySet Name="SACHes" EntityType="Self.SACH" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TACGIAs" EntityType="Self.TACGIA" />

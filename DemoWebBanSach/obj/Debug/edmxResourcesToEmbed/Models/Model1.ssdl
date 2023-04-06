@@ -68,17 +68,6 @@
     <Property Name="Diachi" Type="nvarchar" MaxLength="150" />
     <Property Name="DienThoai" Type="nvarchar" MaxLength="15" />
   </EntityType>
-  <EntityType Name="QUANGCAO">
-    <Key>
-      <PropertyRef Name="STT" />
-    </Key>
-    <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TenCty" Type="nvarchar" MaxLength="200" Nullable="false" />
-    <Property Name="Hinhminhhoa" Type="varchar" MaxLength="20" />
-    <Property Name="Href" Type="varchar" MaxLength="100" />
-    <Property Name="Ngaybatdau" Type="smalldatetime" />
-    <Property Name="Ngayhethan" Type="smalldatetime" />
-  </EntityType>
   <EntityType Name="SACH">
     <Key>
       <PropertyRef Name="Masach" />
@@ -267,7 +256,6 @@
     <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHAXUATBAN" EntityType="Self.NHAXUATBAN" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TACGIA" EntityType="Self.TACGIA" Schema="dbo" store:Type="Tables" />

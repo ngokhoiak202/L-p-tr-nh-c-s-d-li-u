@@ -73,18 +73,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="QUANGCAOs">
-      <EntityTypeMapping TypeName="BANSACHModel.QUANGCAO">
-        <MappingFragment StoreEntitySet="QUANGCAO">
-          <ScalarProperty Name="STT" ColumnName="STT" />
-          <ScalarProperty Name="TenCty" ColumnName="TenCty" />
-          <ScalarProperty Name="Hinhminhhoa" ColumnName="Hinhminhhoa" />
-          <ScalarProperty Name="Href" ColumnName="Href" />
-          <ScalarProperty Name="Ngaybatdau" ColumnName="Ngaybatdau" />
-          <ScalarProperty Name="Ngayhethan" ColumnName="Ngayhethan" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="SACHes">
       <EntityTypeMapping TypeName="BANSACHModel.SACH">
         <MappingFragment StoreEntitySet="SACH">

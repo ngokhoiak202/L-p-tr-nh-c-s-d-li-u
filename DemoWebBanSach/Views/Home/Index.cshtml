@@ -1,8 +1,14 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using DemoWebBanSach.Models;
 
+@{
+    ViewBag.Title = "Home Page";
+    BANSACHEntities db = new BANSACHEntities();
+    List<SACH> listSach = db.SACHes.ToList();
+    <!--
     ViewBag.ListSach = new List<String> { "Cay cam ngot cua toi", "Cho toi xin mot ve di tuoi tho", "Chu thuat hoi chien" };
+         -->
     ViewBag.ListTheLoai = new List<String> { "Ngoại ngữ", "Công nghệ thông tin", "Luật", "Văn học" };
+
 }  <!-- banner bg main start -->
 <div class="banner_bg_main">
     <!-- header top section start -->
@@ -48,7 +54,7 @@
                 <span class="toggle_icon" onclick="openNav()"><img src="~/images/toggle-icon.png"></span>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       THỂ LOẠI
+                        THỂ LOẠI
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         @{
@@ -149,9 +155,10 @@
     <!-- banner section end -->
 </div>
 <!-- banner bg main end -->
-@{
-    List<string> listSach = (List<string>)ViewBag.ListSach;
-    <!-- fashion section start -->
+
+    <!-- List<string> listSach = (List<string>)ViewBag.ListSach;  -->
+    <!-- fashion section start   Sach ban chay -->
+
     <div class="fashion_section">
 
         <div id="main_slider" class="carousel slide" data-ride="carousel">
@@ -163,7 +170,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -174,7 +181,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -185,49 +192,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
-                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
-                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="fashion_taital">Sach ban chay</h1>
-                        <div class="fashion_section_2">
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
-                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
-                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
-                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
-                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[3].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -247,7 +212,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -258,7 +223,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -269,7 +234,49 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[0]</h4>
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
+                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
+                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="fashion_taital">Sach ban chay</h1>
+                        <div class="fashion_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
+                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
+                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
+                                        <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
+                                        <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[0].Tensach</h4>
                                         <p class="price_text">Giá: <span style="color: #262626;">$ 30</span></p>
                                         <div class="tshirt_img"><img src="~/images/banchay.jpg"></div>
                                         <div class="btn_main">
@@ -293,7 +300,7 @@
 
     </div>
     <!-- fashion section end -->
-    <!-- electronic section start -->
+    <!-- electronic section start Sach van hoc-->
     <div class="fashion_section">
         <div id="electronic_main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -304,7 +311,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -315,7 +322,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -326,49 +333,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="fashion_taital">Sach van hoc</h1>
-                        <div class="fashion_section_2">
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -388,7 +353,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -399,7 +364,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -410,7 +375,49 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[1]</h4>
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="fashion_taital">Sach van hoc</h1>
+                        <div class="fashion_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[1].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="electronic_img"><img src="~/images/sachvanhoc.jpg"></div>
                                         <div class="btn_main">
@@ -433,7 +440,7 @@
         </div>
     </div>
     <!-- electronic section end -->
-    <!-- jewellery  section start -->
+    <!-- jewellery  section start truyen tranh -->
     <div class="jewellery_section">
         <div id="jewellery_main_slider" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -444,7 +451,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -455,7 +462,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -466,49 +473,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="container">
-                        <h1 class="fashion_taital">Truyen tranh</h1>
-                        <div class="fashion_section_2">
-                            <div class="row">
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
-                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
-                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
-                                        <div class="btn_main">
-                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
-                                            <div class="seemore_bt"><a href="#">See More</a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-4">
-                                    <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -528,7 +493,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -539,7 +504,7 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -550,7 +515,49 @@
                                 </div>
                                 <div class="col-lg-4 col-sm-4">
                                     <div class="box_main">
-                                        <h4 class="shirt_text">@listSach[2]</h4>
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <h1 class="fashion_taital">Truyen tranh</h1>
+                        <div class="fashion_section_2">
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
+                                        <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
+                                        <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
+                                        <div class="btn_main">
+                                            <div class="buy_bt"><a href="#">Mua ngay</a></div>
+                                            <div class="seemore_bt"><a href="#">See More</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-4">
+                                    <div class="box_main">
+                                        <h4 class="shirt_text">@listSach[2].Tensach</h4>
                                         <p class="price_text">Giá:   <span style="color: #262626;">$ 100</span></p>
                                         <div class="jewellery_img"><img src="~/images/truyentranh.jpg"></div>
                                         <div class="btn_main">
@@ -576,7 +583,7 @@
         </div>
     </div>
     <!-- jewellery  section end -->
-}
+
 
 <!-- Javascript files-->
 <script src="js/jquery.min.js"></script>

@@ -73,17 +73,6 @@
           <Property Name="Diachi" Type="nvarchar" MaxLength="150" />
           <Property Name="DienThoai" Type="nvarchar" MaxLength="15" />
         </EntityType>
-        <EntityType Name="QUANGCAO">
-          <Key>
-            <PropertyRef Name="STT" />
-          </Key>
-          <Property Name="STT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TenCty" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="Hinhminhhoa" Type="varchar" MaxLength="20" />
-          <Property Name="Href" Type="varchar" MaxLength="100" />
-          <Property Name="Ngaybatdau" Type="smalldatetime" />
-          <Property Name="Ngayhethan" Type="smalldatetime" />
-        </EntityType>
         <EntityType Name="SACH">
           <Key>
             <PropertyRef Name="Masach" />
@@ -272,7 +261,6 @@
           <EntitySet Name="DONDATHANG" EntityType="Self.DONDATHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHAXUATBAN" EntityType="Self.NHAXUATBAN" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="QUANGCAO" EntityType="Self.QUANGCAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TACGIA" EntityType="Self.TACGIA" Schema="dbo" store:Type="Tables" />
@@ -391,17 +379,6 @@
           <Property Name="Diachi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SACHes" Relationship="Self.FK_Sach_NhaXuatBan" FromRole="NHAXUATBAN" ToRole="SACH" />
-        </EntityType>
-        <EntityType Name="QUANGCAO">
-          <Key>
-            <PropertyRef Name="STT" />
-          </Key>
-          <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TenCty" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Hinhminhhoa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Href" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Ngaybatdau" Type="DateTime" Precision="0" />
-          <Property Name="Ngayhethan" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="SACH">
           <Key>
@@ -568,7 +545,6 @@
           <EntitySet Name="DONDATHANGs" EntityType="Self.DONDATHANG" />
           <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
           <EntitySet Name="NHAXUATBANs" EntityType="Self.NHAXUATBAN" />
-          <EntitySet Name="QUANGCAOs" EntityType="Self.QUANGCAO" />
           <EntitySet Name="SACHes" EntityType="Self.SACH" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="TACGIAs" EntityType="Self.TACGIA" />
@@ -723,18 +699,6 @@
                 <ScalarProperty Name="TenNXB" ColumnName="TenNXB" />
                 <ScalarProperty Name="Diachi" ColumnName="Diachi" />
                 <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="QUANGCAOs">
-            <EntityTypeMapping TypeName="BANSACHModel.QUANGCAO">
-              <MappingFragment StoreEntitySet="QUANGCAO">
-                <ScalarProperty Name="STT" ColumnName="STT" />
-                <ScalarProperty Name="TenCty" ColumnName="TenCty" />
-                <ScalarProperty Name="Hinhminhhoa" ColumnName="Hinhminhhoa" />
-                <ScalarProperty Name="Href" ColumnName="Href" />
-                <ScalarProperty Name="Ngaybatdau" ColumnName="Ngaybatdau" />
-                <ScalarProperty Name="Ngayhethan" ColumnName="Ngayhethan" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
